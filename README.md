@@ -15,31 +15,31 @@ $ npm --version
 $ subl --version
 ```
 
-1. Setup the activity directory
+2. Setup the activity directory
 ```console
 $ cd desktop
 $ mkdir tdd-setup-lastname && cd tdd-setup-lastname
 ```
 
-1. Initialize node package.json and install ```webdriverio``` and ```selenium-standalone```
+3. Initialize node package.json and install ```webdriverio``` and ```selenium-standalone```
 ```console
 $ npm init -y
 $ npm install --save-dev webdriverio
 $ npm install -g selenium-standalone
 ```
 
-1. Launch new terminal then we will label this as ```Terminal B``` and install ```selenium-standalone```
+4. Launch new terminal then we will label this as ```Terminal B``` and install ```selenium-standalone```
 ```console
 $ selenium-standalone install
 ```
 
-1. Go back to ```Terminal A``` and create a folder ```test``` to hold all test scripts.
+5. Go back to ```Terminal A``` and create a folder ```test``` to hold all test scripts.
 ```console
 $ mkdir test
 $ subl .
 ```
 
-1. Go to [webdriver.io](http://webdriver.io/) and copy the setup code provided in the documentation site then save it inside the test folder with a filename ```myfirsttest.js```
+6. Go to [webdriver.io](http://webdriver.io/) and copy the setup code provided in the documentation site then save it inside the test folder with a filename ```myfirsttest.js```
 ```javascript
 var webdriverio = require('webdriverio');
 var options = { desiredCapabilities: { browserName: 'chrome' } };
@@ -57,7 +57,7 @@ client
     .end();
 ```
 
-1. Update ```package.json```
+7. Update ```package.json```
 ```json
 {
 ...
@@ -70,7 +70,7 @@ client
 }
 ```
 
-1. Execute the test
+8. Execute the test
 ```console
 $ node test/myfirsttest
 
