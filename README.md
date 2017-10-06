@@ -39,9 +39,22 @@ $ mkdir test
 $ subl .
 ```
 
-1. Go to [webdriver.io](http://webdriver.io/) and copy the setup code provided in the documentation site.
+1. Go to [webdriver.io](http://webdriver.io/) and copy the setup code provided in the documentation site then save it inside the test folder with a filename ```myfirsttest.js```
 ```javascript
-
+var webdriverio = require('webdriverio');
+var options = { desiredCapabilities: { browserName: 'chrome' } };
+var client = webdriverio.remote(options);
+client
+    .init()
+    .url('https://duckduckgo.com/')
+    .setValue('#search_form_input_homepage', 'WebdriverIO')
+    .click('#search_button_homepage')
+    .getTitle().then(function(title) {
+        console.log('Title is: ' + title);
+        // outputs:
+        // "Title is: WebdriverIO (Software) at DuckDuckGo"
+    })
+    .end();
 ```
 
 1. Update ```package.json```
